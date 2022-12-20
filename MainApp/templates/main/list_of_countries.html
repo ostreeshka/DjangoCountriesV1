@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список стран</title>
+</head>
+<body>
+<p><a href="http://127.0.0.1:8000/">На главную</a></p>
+
+{% if isLetter %}
+    <ol><p style="font-size: 25px;">Страны на букву {{isLetter}}</p></ol>
+{% else %}
+    <ol><p style="font-size: 25px;">Список стран по алфавиту:</p></ol>
+{% endif %}
+
+{% for countrrrr in theCountry %}
+    <a href="http://127.0.0.1:8000/country/{{countrrrr}}"><li>{{countrrrr}}</li></a>
+{% endfor %}
+<p></p>
+{% if isLetter %}
+{% for i in allpages %}
+    {% if i == page %}
+
+        <i>
+            {{i}}
+        </i>
+
+    {% else %}
+
+        <a href="http://127.0.0.1:8000/list_of_countries/letter={{isLetter}}/page={{i}}">{{i}}</a>
+
+    {% endif %}
+
+{% endfor %}
+{% else %}
+{% for i in allpages %}
+    {% if i == page %}
+
+        <i>
+            {{i}}
+        </i>
+
+    {% else %}
+
+        <a href="http://127.0.0.1:8000/list_of_countries/page={{i}}">{{i}}</a>
+
+    {% endif %}
+
+{% endfor %}
+{% endif %}
+
+<p></p>
+{% for letter in letters %}
+    <a href="http://127.0.0.1:8000/list_of_countries/letter={{letter}}">{{letter}}</a>
+{% endfor %}
+<a href="http://127.0.0.1:8000/list_of_countries/page=1">К списку</a>
+</body>
+</html>

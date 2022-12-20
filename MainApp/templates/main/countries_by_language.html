@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{searched_lang}}</title>
+</head>
+<body>
+<a href="http://127.0.0.1:8000/">На главную страницу</a>/<a href="http://127.0.0.1:8000/list_of_languages">К списку языков</a>
+<p style="font-size: 25px;">{{searched_lang}}</p>
+<ol><p>Страны с национальными языками <u>{{searched_lang}}</u>:</p>
+    {% for langCountry in countries %}
+        <a href="http://127.0.0.1:8000/country/{{langCountry}}"><li>{{langCountry}}</li></a>
+    {% endfor %}</ol>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Языки</title>
+</head>
+<body>
+<p><a href="http://127.0.0.1:8000/">На главную</a></p>
+<ol><p style="font-size: 25px;">Все языки:</p>
+    {% for currentlanguage in languages %}
+        <a href="http://127.0.0.1:8000/list_of_languages/{{currentlanguage}}"><li>{{currentlanguage}}</li></a>
+    {% endfor %}
+</ol>
+</body>
+</html>

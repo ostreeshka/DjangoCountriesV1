@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{country_key.country}}</title>
+</head>
+<body>
+<a href="http://127.0.0.1:8000/">На главную страницу</a>/<a href="http://127.0.0.1:8000/list_of_countries/page=1">К списку стран</a>
+<p style="font-size: 25px;">{{country_key.country}}</p>
+<ol><p>Список языков, принятые в обиход в <u>{{country_key.country}}<u/></p>
+    {% for lang in country_key.languages %}
+        <a href="http://127.0.0.1:8000/list_of_languages/{{lang}}"><li>{{lang}}</li></a>
+    {% endfor %}
+</ol>
+</body>
+</html>
